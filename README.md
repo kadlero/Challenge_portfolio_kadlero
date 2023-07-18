@@ -54,3 +54,5 @@
 ###### //*[@id="__next"]/form/div/div[2]/button/span[1]
 ###### //*[text()="Sign in"]
 ###### /html/body/div/form/div/div[2]/button/span[1]
+
+# Task 3: Pierwszy test automatyczny i asserty

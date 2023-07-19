@@ -59,3 +59,4 @@
 ## Subtask 2: TestMediumPage - PASSED
 ## Subtask 3: Pierwszy test i assert
 ### 🤩 log_in_to_the_system.py - PASSED
+### 🤩 dashboard_page. py title_of_page PASSED

@@ -1,9 +1,14 @@
 import time
+from lib2to3.pgen2 import driver
 from telnetlib import EC
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
+
+from utils.settings import DEFAULT_LOCATOR_TYPE
+
 
 class BasePage():
 
@@ -25,12 +30,12 @@ class BasePage():
         time.sleep(3)
 
     def assert_element_text(self, driver, xpath, expected_text):
-    """Comparing expected text with observed value from web element
-       :param driver: webdriver instance
-       :param xpath: xpath to element with text to be observed
-       :param expected_text: text what we expecting to be found
-       :return: None
-   """
+   #  """Comparing expected text with observed value from web element
+   #     :param driver: webdriver instance
+   #     :param xpath: xpath to element with text to be observed
+   #     :param expected_text: text what we expecting to be found
+   #     :return: None
+   # """
         element = driver.find_element(by=By.XPATH, value=xpath)
         element_text = element.text
         assert expected_text == element_text
@@ -38,5 +43,5 @@ class BasePage():
 
     def wait_for_element_to_be_clickable(self, locator, locator_type=DEFAULT_LOCATOR_TYPE):
         wait = WebDriverWait(self, driver, 5)
-        element = wait.until(EC.element_to_be_clickable((locator_type, lokator)))
+        element = wait.until(EC.element_to_be_clickable((locator_type, locator)))
         time.sleep(3)

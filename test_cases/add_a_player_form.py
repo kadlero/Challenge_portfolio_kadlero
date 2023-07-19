@@ -1,12 +1,13 @@
 import os
-import unittest
-from selenium.webdriver.chrome.service import Service
-from selenium import webdriver
 import time
+import unittest
 
-from pages.base_page import BasePage
-from pages.login_page import LoginPage
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+
 from pages.dashboard import Dashboard
+from pages.login_page import LoginPage
+from pages.add_a_player import AddPlayer
 from utils.settings import DRIVER_PATH, IMPLICITLY_WAIT
 
 
@@ -32,6 +33,9 @@ class TestLoginPage(unittest.TestCase):
         user_login.click_on_the_sign_in_button()
         dashboard_page = Dashboard(self.driver)
         dashboard_page.title_of_page()
+        dashboard_page.click_on_the_add_player_button()
+        add_player = AddPlayer(self.driver)
+        add_player.title_of_page()
         time.sleep(5)
 
     @classmethod

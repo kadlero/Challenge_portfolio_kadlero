@@ -1,8 +1,10 @@
-
+import time
 from pages.base_page import BasePage
 
 
 class LoginPage(BasePage):
+    login_box_title = "//*[text()='Scouts Panel']"
+    expected_text = "Scouts Panel"
     login_field_xpath = "//*[@id='login']"
     password_field_xpath = "//*[@id='password']"
     sign_in_button_xpath = "//*[text()='Sign in']"
@@ -17,4 +19,9 @@ class LoginPage(BasePage):
         self.click_on_the_element(self.sign_in_button_xpath)
     def title_of_page(self):
         assert self.get_page_title(self.login_url) == self.expected_title
+    # def title_of_box(self, driver, login_box_title, expected_text, xpath=login_box_title):
+    #     element = driver.find_element(by=By.XPATH, value=xpath)
+    #     element_text = element.text
+    #     assert expected_text == element_text
+
 

@@ -15,7 +15,7 @@ class Dashboard(BasePage):
     last_created_player_xpath = "/html/body/div/div[1]/main/div[3]/div[3]/div/div/a[1]/button/span[1]"
 
     def title_of_page(self):
-        time.sleep(4)
+        self.wait_for_element_to_be_clickable(self.add_player_button_xpath)
         assert self.get_page_title(self.dashboard_url) == self.expected_title
     def click_on_the_add_player_button(self):
         self.click_on_the_element(self.add_player_button_xpath)

@@ -1,5 +1,10 @@
 import time
+from telnetlib import EC
+
+from selenium.webdriver.support.wait import WebDriverWait
+
 from pages.base_page import BasePage
+from utils.settings import DEFAULT_LOCATOR_TYPE
 
 
 class LoginPage(BasePage):
@@ -9,7 +14,7 @@ class LoginPage(BasePage):
     password_field_xpath = "//*[@id='password']"
     sign_in_button_xpath = "//*[text()='Sign in']"
     login_url = ('https://scouts-test.futbolkolektyw.pl/en/login')
-    expected_title = "Scouts panel - sign innnn"
+    expected_title = "Scouts panel - sign in"
 
     def type_in_email(self, email):
         self.field_send_keys(self.login_field_xpath, email)
@@ -23,5 +28,8 @@ class LoginPage(BasePage):
     #     element = driver.find_element(by=By.XPATH, value=xpath)
     #     element_text = element.text
     #     assert expected_text == element_text
+    def wait_for_button_to_be_clickable(self):
+        self.wait_for_element_to_be_clickable(self.sign_in_button_xpath)
+
 
 

@@ -56,3 +56,6 @@
 ###### /html/body/div/form/div/div[2]/button/span[1]
 
 # Task 3: Pierwszy test automatyczny i asserty
+## Subtask 2: TestMediumPage - PASSED
+## Subtask 3: Pierwszy test i assert
+### 🤩 log_in_to_the_system.py - PASSED

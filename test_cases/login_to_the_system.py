@@ -1,12 +1,12 @@
 import os
-import unittest
-from selenium.webdriver.chrome.service import Service
-from selenium import webdriver
 import time
+import unittest
 
-from pages.base_page import BasePage
-from pages.login_page import LoginPage
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+
 from pages.dashboard import Dashboard
+from pages.login_page import LoginPage
 from utils.settings import DRIVER_PATH, IMPLICITLY_WAIT
 
 

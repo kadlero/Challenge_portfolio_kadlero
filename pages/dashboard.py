@@ -19,4 +19,7 @@ class Dashboard(BasePage):
         assert self.get_page_title(self.dashboard_url) == self.expected_title
     def click_on_the_add_player_button(self):
         self.click_on_the_element(self.add_player_button_xpath)
-
+    def wait_for_button_to_be_clickable(self):
+        self.wait_for_element_to_be_clickable(self.dev_team_contact_button_xpath)
+    def click_on_the_dev_team_contact_button(self):
+        self.click_on_the_element(self.dev_team_contact_button_xpath)

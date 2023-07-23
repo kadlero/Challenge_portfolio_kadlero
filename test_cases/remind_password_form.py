@@ -7,10 +7,11 @@ from selenium.webdriver.chrome.service import Service
 
 from pages.dashboard import Dashboard
 from pages.login_page import LoginPage
+from pages.remind_password import RemindPasswordPage
 from utils.settings import DRIVER_PATH, IMPLICITLY_WAIT
 
 
-class TestLoginPage(unittest.TestCase):
+class TestRemindPasswordPage(unittest.TestCase):
 
     driver = None
     driver_service = None
@@ -27,19 +28,6 @@ class TestLoginPage(unittest.TestCase):
     def test_log_in_to_the_system_invalid (self):
         user_login = LoginPage(self.driver)
         user_login.title_of_page()
-        user_login.type_in_email('plainadress')
-        user_login.type_in_password('1234')
-        user_login.wait_for_button_to_be_clickable()
-        user_login.click_on_the_sign_in_button()
-        time.sleep(5)
-
-    @classmethod
-    def tearDown(self):
-        self.driver.quit()
-
-    def test_log_in_to_the_system_valid (self):
-        user_login = LoginPage(self.driver)
-        user_login.title_of_page()
         # user_login.title_of_box()
         user_login.type_in_email('user03@getnada.com')
         user_login.type_in_password('Test-1234')
@@ -52,4 +40,5 @@ class TestLoginPage(unittest.TestCase):
     @classmethod
     def tearDown(self):
         self.driver.quit()
+
 

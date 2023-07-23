@@ -61,3 +61,4 @@
 ### 🤩 log_in_to_the_system.py - PASSED
 ### 🤩 dashboard_page.py title_of_page PASSED
 ### 🤩 add_a_player_form.py title_of_page PASSED
+## Subtask 4: Metoda zrzutów ekranu i raport z testów: https://drive.google.com/drive/u/0/folders/14Tyoc-vHFffzkZj6ssAXPjxfkjOZ3ucB

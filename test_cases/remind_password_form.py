@@ -25,16 +25,17 @@ class TestRemindPasswordPage(unittest.TestCase):
         self.driver.fullscreen_window()
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
 
-    def test_log_in_to_the_system_invalid (self):
+    def test_remind_password (self):
         user_login = LoginPage(self.driver)
         user_login.title_of_page()
         # user_login.title_of_box()
-        user_login.type_in_email('user03@getnada.com')
-        user_login.type_in_password('Test-1234')
         user_login.wait_for_button_to_be_clickable()
-        user_login.click_on_the_sign_in_button()
-        dashboard_page = Dashboard(self.driver)
-        dashboard_page.title_of_page()
+        user_login.click_on_the_remind_password_button()
+        user_remind = RemindPasswordPage(self.driver)
+        user_remind.title_of_page()
+        user_remind.type_in_email('user03@getnada.com')
+        user_remind.wait_for_button_to_be_clickable()
+        user_remind.click_on_the_send_button()
         time.sleep(5)
 
     @classmethod

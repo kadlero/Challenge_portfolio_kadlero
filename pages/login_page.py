@@ -28,7 +28,6 @@ class LoginPage(BasePage):
         self.click_on_the_element(self.sign_in_button_xpath)
     def click_on_the_remind_password_button(self):
         self.click_on_the_element(self.remind_password_button_xpath)
-
     def select_language(self, language):
         self.click_on_the_element(self.language_listbox_xpath)
         time.sleep(1)

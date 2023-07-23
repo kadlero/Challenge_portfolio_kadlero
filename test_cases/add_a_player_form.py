@@ -71,3 +71,22 @@ class TestLoginPage(unittest.TestCase):
     @classmethod
     def tearDown(self):
         self.driver.quit()
+    def test_add_a_player_leg (self):
+        user_login = LoginPage(self.driver)
+        user_login.title_of_page()
+        user_login.type_in_email('user03@getnada.com')
+        user_login.type_in_password('Test-1234')
+        user_login.click_on_the_sign_in_button()
+        dashboard_page = Dashboard(self.driver)
+        dashboard_page.title_of_page()
+        dashboard_page.click_on_the_add_player_button()
+        add_player = AddPlayer(self.driver)
+        add_player.title_of_page()
+        add_player.select_leg("Right leg")
+        time.sleep(3)
+        add_player.select_leg("Left leg")
+        time.sleep(5)
+
+    @classmethod
+    def tearDown(self):
+        self.driver.quit()

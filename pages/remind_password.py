@@ -8,7 +8,7 @@ from utils.settings import DEFAULT_LOCATOR_TYPE
 
 
 class RemindPasswordPage(BasePage):
-    remind_password_url = ('https://scouts-test.futbolkolektyw.pl/en/remind')
+    remind_password_url = ('https://dareit.futbolkolektyw.pl/en/remind')
     expected_title = "Remind password"
     box_title = "//*[text()='Remind password' and @class]"
     expected_text = "Remind password"

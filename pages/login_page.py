@@ -17,7 +17,7 @@ class LoginPage(BasePage):
     language_listbox_xpath = "//*[@class='MuiSelect-nativeInput']"
     language_listbox_en_xpath = "//*[@data-value='en']"
     language_listbox_pl_xpath = "//*[@data-value='pl']"
-    login_url = ('https://scouts-test.futbolkolektyw.pl/en/login')
+    login_url = ('https://dareit.futbolkolektyw.pl/en/login')
     expected_title = "Scouts panel - sign in"
 
     def type_in_email(self, email):

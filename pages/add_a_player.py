@@ -4,7 +4,7 @@ import time
 
 class AddPlayer(BasePage):
     expected_title = "Add player"
-    add_player_url = ('https://scouts-test.futbolkolektyw.pl/en/players/add')
+    add_player_url = ('https://dareit.futbolkolektyw.pl/en/players/add')
     add_player_email_field_xpath = "//*[@name='email']"
     add_player_name_field_xpath = "//*[@name='name']"
     add_player_surname_field_xpath = "//*[@name='surname']"
@@ -37,8 +37,8 @@ class AddPlayer(BasePage):
         time.sleep(4)
         assert self.get_page_title(self.add_player_url) == self.expected_title
     def select_leg(self, leg):
+        self.wait_for_element_to_be_clickable(self.add_player_leg_xpath)
         self.click_on_the_element(self.add_player_leg_xpath)
-        time.sleep(1)
         if leg == "Right leg":
             self.click_on_the_element(self.add_player_right_leg_xpath)
         else:

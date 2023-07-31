@@ -21,7 +21,7 @@ class TestLoginPage(unittest.TestCase):
         os.chmod(DRIVER_PATH, 755)
         self.driver_service = Service(executable_path=DRIVER_PATH)
         self.driver = webdriver.Chrome(service=self.driver_service)
-        self.driver.get('https://scouts-test.futbolkolektyw.pl/en')
+        self.driver.get('https://dareit.futbolkolektyw.pl/en')
         self.driver.fullscreen_window()
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
 
@@ -30,6 +30,7 @@ class TestLoginPage(unittest.TestCase):
         user_login.title_of_page()
         user_login.type_in_email('user03@getnada.com')
         user_login.type_in_password('Test-1234')
+        user_login.wait_for_button_to_be_clickable()
         user_login.click_on_the_sign_in_button()
         dashboard_page = Dashboard(self.driver)
         dashboard_page.title_of_page()
@@ -43,7 +44,7 @@ class TestLoginPage(unittest.TestCase):
         add_player.wait_for_button_to_be_clickable()
         add_player.click_on_the_submit_button()
         add_player.click_on_the_main_page_button()
-        # dashboard_page.title_of_page()
+        # dashboard_page.check_last_created_player()
         time.sleep(5)
 
     @classmethod
@@ -55,6 +56,7 @@ class TestLoginPage(unittest.TestCase):
         user_login.title_of_page()
         user_login.type_in_email('user03@getnada.com')
         user_login.type_in_password('Test-1234')
+        user_login.wait_for_button_to_be_clickable()
         user_login.click_on_the_sign_in_button()
         dashboard_page = Dashboard(self.driver)
         dashboard_page.title_of_page()
@@ -71,11 +73,13 @@ class TestLoginPage(unittest.TestCase):
     @classmethod
     def tearDown(self):
         self.driver.quit()
+        
     def test_add_a_player_leg (self):
         user_login = LoginPage(self.driver)
         user_login.title_of_page()
         user_login.type_in_email('user03@getnada.com')
         user_login.type_in_password('Test-1234')
+        user_login.wait_for_button_to_be_clickable()
         user_login.click_on_the_sign_in_button()
         dashboard_page = Dashboard(self.driver)
         dashboard_page.title_of_page()
